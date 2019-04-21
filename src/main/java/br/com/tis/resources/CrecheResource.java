@@ -2,15 +2,15 @@ package br.com.tis.resources;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
 
 import br.com.tis.domain.Creche;
 import br.com.tis.services.CrecheService;
 
-@RestController
+@Controller
 @RequestMapping(value="/creche")
 public class CrecheResource {
 	
@@ -18,8 +18,8 @@ public class CrecheResource {
 	private CrecheService service;
 	
 	@RequestMapping(method=RequestMethod.GET)
-	public String creche() {
-		return "RETORNAR PAGINA PRINCIPAL DA CRECHE E PROVAVELMENTE O FEED VAI FICAR NESSA URL";
+	public String trabalhos() {
+		return "RETORNAR PAGINA PRINCIPAL DOS TRABALHOS OFERECIDOS PELA CRECHE";
 	}
 	
 	@RequestMapping(value="/{id}", method=RequestMethod.GET)

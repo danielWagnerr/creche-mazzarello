@@ -11,7 +11,7 @@ import br.com.tis.domain.Trabalho;
 import br.com.tis.services.TrabalhoService;
 
 @RestController
-@RequestMapping(value="/trabalho")
+@RequestMapping(value="/trabalhos")
 public class TrabalhoResource {
 	
 	@Autowired

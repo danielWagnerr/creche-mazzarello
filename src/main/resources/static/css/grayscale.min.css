@@ -1,0 +1,447 @@
+/*!
+ * Start Bootstrap - Grayscale v5.0.5 (https://startbootstrap.com/template-overviews/grayscale)
+ * Copyright 2013-2019 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-grayscale/blob/master/LICENSE)
+ */
+
+#mainNav {
+    min-height: 56px;
+    background-color: #fff
+}
+
+    #mainNav .navbar-toggler {
+        font-size: 80%;
+        padding: .75rem;
+        color: #64a19d;
+        border: 1px solid #64a19d
+    }
+
+        #mainNav .navbar-toggler:focus {
+            outline: 0
+        }
+
+    #mainNav .navbar-brand {
+        color: #161616;
+        font-weight: 700;
+        padding: .9rem 0
+    }
+
+    #mainNav .navbar-nav .nav-item:hover {
+        color: fade(white,80%);
+        outline: 0;
+        background-color: transparent
+    }
+
+    #mainNav .navbar-nav .nav-item:active, #mainNav .navbar-nav .nav-item:focus {
+        outline: 0;
+        background-color: transparent
+    }
+
+@media (min-width:992px) {
+    #mainNav {
+        padding-top: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+        background-color: transparent;
+        -webkit-transition: background-color .3s ease-in-out;
+        transition: background-color .3s ease-in-out
+    }
+
+        #mainNav .navbar-brand {
+            padding: .5rem 0;
+            color: #ffffff
+        }
+
+        #mainNav .nav-link {
+            -webkit-transition: none;
+            transition: none;
+            padding: 2rem 1.5rem;
+            color: #ffffff
+        }
+
+            #mainNav .nav-link:hover {
+                color: #000000
+            }
+
+            #mainNav .nav-link:active {
+                color: #fff
+            }
+
+        #mainNav.navbar-shrink {
+            background-color: #fff
+        }
+
+            #mainNav.navbar-shrink .navbar-brand {
+                color: #161616
+            }
+
+            #mainNav.navbar-shrink .nav-link {
+                color: #161616;
+                padding: 1.5rem 1.5rem 1.25rem;
+                border-bottom: .25rem solid transparent
+            }
+
+                #mainNav.navbar-shrink .nav-link:hover {
+                    color: #000000
+                }
+
+                #mainNav.navbar-shrink .nav-link:active {
+                    color: #000000
+                }
+
+                #mainNav.navbar-shrink .nav-link.active {
+                    color: #000000;
+                    outline: 0;
+                    border-bottom: .25rem solid black
+                }
+}
+
+.masthead {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 35rem;
+    padding: 15rem 0;
+    background: url(../img/bg-signup.jpg);
+    background: url(../img/bg-signup.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover
+}
+
+    .masthead h1 {
+        font-family: 'Varela Round';
+        font-size: 2.5rem;
+        line-height: 2.5rem;
+        letter-spacing: .8rem;
+        background: -webkit-linear-gradient(#ffffff,#fffdfd);
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text
+    }
+
+    .masthead h2 {
+        max-width: 20rem;
+        font-size: 1rem;
+        background-color: rgba(255, 255, 255, 0.6);
+    }
+
+@media (min-width:768px) {
+    .masthead h1 {
+        font-size: 4rem;
+        line-height: 4rem
+    }
+}
+
+@media (min-width:992px) {
+    .masthead {
+        height: 100vh;
+        padding: 0
+    }
+
+        .masthead h1 {
+            font-size: 6.5rem;
+            line-height: 6.5rem;
+            letter-spacing: .8rem
+        }
+
+        .masthead h2 {
+            max-width: 30rem;
+            font-size: 1.25rem
+        }
+}
+
+.btn {
+    -webkit-box-shadow: 0 .1875rem .1875rem 0 rgba(0,0,0,.1) !important;
+    box-shadow: 0 .1875rem .1875rem 0 rgba(0,0,0,.1) !important;
+    padding: 1.25rem 2rem;
+    font-family: 'Varela Round';
+    font-size: 80%;
+    text-transform: uppercase;
+    letter-spacing: .15rem;
+    border: 0
+}
+
+.btn-primary {
+    background-color: #000000ce;
+    color: #ffffff
+}
+
+    .btn-primary:hover {
+        background-color: #ffffff;
+        color: #000000
+    }
+
+    .btn-primary:focus {
+        background-color: #dada00de;
+        color: #000000
+    }
+
+    .btn-primary:active {
+        background-color: #ffff00 !important
+    }
+
+.about-section {
+    padding-top: 10rem;
+    background: -webkit-gradient(linear,left top,left bottom,from(#ffff99),color-stop(75%,#ffff50),to(#ffff99));
+    background: linear-gradient(to bottom,#ffff99 0,(75%,#ffff50) 75%,(#ffff99) 100%)
+}
+
+.about-section1 {
+    padding-top: 10rem;
+    background: -webkit-gradient(linear,left top,left bottom,from(#ffff99),color-stop(75%,#ffff50),to(#ffff99));
+    background: linear-gradient(to bottom,#ffff99 0,(75%,#ffff50) 75%,(#ffff99) 100%)
+}
+
+    .about-section p {
+        margin-bottom: 5rem
+    }
+
+.projects-section {
+    padding: 10rem 0
+}
+
+    .projects-section .featured-text {
+        padding: 2rem
+    }
+
+@media (min-width:992px) {
+    .projects-section .featured-text {
+        padding: 0 0 0 2rem;
+        border-left: .5rem solid #ffff00
+    }
+}
+
+.projects-section .project-text {
+    padding: 3rem;
+    font-size: 90%
+}
+
+@media (min-width:992px) {
+    .projects-section .project-text {
+        padding: 5rem
+    }
+
+        .projects-section .project-text hr {
+            border-color: #ffff00;
+            border-width: .25rem;
+            width: 30%
+        }
+}
+
+.signup-section {
+    padding: 10rem 0;
+    background: -webkit-gradient(linear,left top,left bottom,from(#ffff99),color-stop(75%,#ffff50),to(#ffff99));
+    background: linear-gradient(to bottom,#ffff99 0,(75%,#ffff50) 75%,(#ffff99) 100%);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover
+}
+
+    .signup-section .form-inline input {
+        -webkit-box-shadow: 0 .1875rem .1875rem 0 rgba(0,0,0,.1) !important;
+        box-shadow: 0 .1875rem .1875rem 0 rgba(0,0,0,.1) !important;
+        padding: 1.25rem 2rem;
+        height: auto;
+        font-family: 'Varela Round';
+        font-size: 80%;
+        text-transform: uppercase;
+        letter-spacing: .15rem;
+        border: 0
+    }
+f
+.contact-section {
+    padding: 5rem 0 0;
+}
+
+    .contact-section .card {
+        border: 0;
+        border-bottom: .25rem solid black;
+        background: #ffff6a
+    }
+
+        .contact-section .card h4 {
+            font-size: .8rem;
+            font-family: 'Varela Round';
+            text-transform: uppercase;
+            letter-spacing: .15rem;
+        }
+
+        .contact-section .card hr {
+            border-color: black;
+            border-width: .25rem;
+            width: 3rem
+        }
+
+    .contact-section .social {
+        margin-top: 5rem
+    }
+
+        .contact-section .social a {
+            text-align: center;
+            height: 3rem;
+            width: 3rem;
+            background: blue;
+            border-radius: 100%;
+            line-height: 3rem;
+            color: white
+        }
+
+            .contact-section .social a:hover {
+                color: white
+            }
+
+            .contact-section .social a:active {
+                color: #fff
+            }
+
+body {
+    font-family: Nunito;
+    letter-spacing: .0625em
+}
+
+a {
+    color: #64a19d
+}
+
+    a:focus, a:hover {
+        text-decoration: none;
+        color: #3c6360
+    }
+
+.bg-black {
+    background-color: #161616 !important
+}
+
+.bg-primary {
+    background-color: #64a19d !important
+}
+
+.text-primary {
+    color: #64a19d !important
+}
+
+footer {
+    padding: 5rem 0
+}
+
+#face{
+    text-align: center;
+    color: black;
+}
+
+.carousel {
+    width: 100%;
+    height: 100%;
+    transform: translateZ(0);
+  }
+  
+  .carousel input {
+    position: absolute;
+    left: -10000px;
+  }
+  
+  .carousel__stage {
+    overflow: hidden;
+    font-size: 16px;
+    white-space: nowrap;
+    width: 100%;
+    height: 100%;
+    transition: text-indent 600ms;
+    position: relative;
+    background: -webkit-gradient(linear,left top,left bottom,from(#ffff99),color-stop(75%,#ffff50),to(#ffff99));
+    background: linear-gradient(to bottom,#ffff50 0,(75%,#ffff50) 75%,(#ffff99) 100%)
+  }
+  
+  .carousel__item {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    text-indent: 0;
+    opacity: 0.6;
+    text-align: center;
+  }
+  
+  .carousel__image {
+    height: 50%;
+    width: 50%;
+    display: inline-block;
+  }
+  
+  .carousel__next,
+  .carousel__prev {
+    display: none;
+    position: absolute;
+    top: 50%;
+    color: #fff;
+    background: #000000b4;
+    z-index: 1;
+    font-size: 1rem;
+    padding: 20px;
+    cursor: pointer;
+    border-radius: 5%;
+  }
+  
+  .carousel__prev {
+    left: 0;
+  }
+  
+  .carousel__prev:after {
+    content: ' << ';
+    display: inline-block;
+  }
+  
+  .carousel__next {
+    right: 0;
+  }
+  
+  .carousel__next:after {
+    content: ' >> ';
+    display: inline-block;
+  }
+  
+  #carousel1:checked ~ .carousel__stage .carousel__item:nth-child(1),
+  #carousel2:checked ~ .carousel__stage .carousel__item:nth-child(2), 
+  #carousel3:checked ~ .carousel__stage .carousel__item:nth-child(3), 
+  #carousel4:checked ~ .carousel__stage .carousel__item:nth-child(4),
+  #carousel5:checked ~ .carousel__stage .carousel__item:nth-child(5) {
+    opacity: 1;
+  }
+  
+  #carousel1:checked ~ .carousel__stage {
+    text-indent: 0;
+  }
+  
+  #carousel2:checked ~ .carousel__stage {
+    text-indent: -100%;
+  }
+  
+  #carousel3:checked ~ .carousel__stage {
+    text-indent: -200%;
+  }
+  
+  #carousel4:checked ~ .carousel__stage {
+    text-indent: -300%;
+  }
+
+  #carousel5:checked ~ .carousel__stage {
+    text-indent: -400%;
+  }
+  
+  #carousel1:checked ~ .carousel__stage .carousel__item:nth-child(1) .carousel__prev,
+  #carousel1:checked ~ .carousel__stage .carousel__item:nth-child(1) .carousel__next,
+  #carousel2:checked ~ .carousel__stage .carousel__item:nth-child(2) .carousel__prev,
+  #carousel2:checked ~ .carousel__stage .carousel__item:nth-child(2) .carousel__next,
+  #carousel3:checked ~ .carousel__stage .carousel__item:nth-child(3) .carousel__prev,
+  #carousel3:checked ~ .carousel__stage .carousel__item:nth-child(3) .carousel__next,
+  #carousel4:checked ~ .carousel__stage .carousel__item:nth-child(4) .carousel__prev,
+  #carousel4:checked ~ .carousel__stage .carousel__item:nth-child(4) .carousel__next,
+  #carousel5:checked ~ .carousel__stage .carousel__item:nth-child(5) .carousel__prev,
+  #carousel5:checked ~ .carousel__stage .carousel__item:nth-child(5) .carousel__next {
+    display: block;
+  }
+  
+  
+
