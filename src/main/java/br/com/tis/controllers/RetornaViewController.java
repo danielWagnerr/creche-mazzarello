@@ -18,9 +18,9 @@ public class RetornaViewController{
 		return "criancas";
 	}
 	
-	@RequestMapping(value = "/agenda", method = RequestMethod.GET)
-	public String store() {
-		return "store";
+	@RequestMapping(value = "/idosos", method = RequestMethod.GET)
+	public String idosos() {
+		return "idosos";
 	}
 }
  	
