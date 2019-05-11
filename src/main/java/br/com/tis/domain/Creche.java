@@ -37,7 +37,7 @@ public class Creche implements Serializable {
 
 	@OneToMany(mappedBy = "creche", cascade = CascadeType.ALL, orphanRemoval = true)
 	@JsonManagedReference
-	private List<Trabalho> trabalhos = new ArrayList<Trabalho>();
+	private List<Atividade> atividades = new ArrayList<Atividade>();
 	
 	public Creche(String nome, String telefone, Endereco endereco) {
 		super();
@@ -57,22 +57,22 @@ public class Creche implements Serializable {
 		this.endereco = endereco;
 	}
 
-	public void addTrabalho(Trabalho trabalho) {
-		trabalhos.add(trabalho);
-		trabalho.setCreche(this);
+	public void addAtividade(Atividade atividade) {
+		atividades.add(atividade);
+		atividade.setCreche(this);
 	}
 	
-	public void removeTrabalho(Trabalho trabalho) {
-		trabalhos.remove(trabalho);
+	public void removeTrabalho(Atividade trabalho) {
+		atividades.remove(trabalho);
 		trabalho.setCreche(null);
 	}
 
-	public List<Trabalho> getTrabalhos() {
-		return trabalhos;
+	public List<Atividade> getAtividades() {
+		return atividades;
 	}
 
-	public void setTrabalhos(List<Trabalho> trabalhos) {
-		this.trabalhos = trabalhos;
+	public void setAtividades(List<Atividade> atividades) {
+		this.atividades = atividades;
 	}
 
 	public Integer getId() {

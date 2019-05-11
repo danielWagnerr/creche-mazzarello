@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import br.com.tis.domain.Creche;
 import br.com.tis.domain.Endereco;
-import br.com.tis.domain.Trabalho;
+import br.com.tis.domain.Atividade;
 import br.com.tis.repositories.CrecheRepository;
 import br.com.tis.repositories.EnderecoRepository;
 
@@ -28,9 +28,9 @@ public class CrecheMazzarelloApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		endereco = new Endereco("Santa Cruz", "Rua Ana Paula", 117, 0, 31150660);
 		Creche creche = new Creche("Creche Madre Mazzarello", "31 99999 9999", endereco);
-		creche.addTrabalho(new Trabalho("Creche", "Segunda a Sexta", "Não aceitamos crianças"));
-		creche.addTrabalho(new Trabalho("Idosos", "Domingo", "Não aceitamos idosos"));
-		creche.addTrabalho(new Trabalho("Caridade", "Sabado", "Não aceitamos caridade"));
+		creche.addAtividade(new Atividade("Creche", "Segunda a Sexta", "Atividade com crianças..."));
+		creche.addAtividade(new Atividade("Idosos", "Domingo", "Atividade com idosos..."));
+		creche.addAtividade(new Atividade("Caridade", "Sabado", "Caridades..."));
 		
 		creche.setEndereco(endereco);
 		endereco.setCreche(creche);

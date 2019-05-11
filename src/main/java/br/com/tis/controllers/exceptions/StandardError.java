@@ -1,4 +1,4 @@
-package br.com.tis.resources.exceptions;
+package br.com.tis.controllers.exceptions;
 
 import java.io.Serializable;
 

@@ -13,9 +13,9 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
-@Entity(name = "Trabalho")
-@Table(name = "trabalho")
-public class Trabalho implements Serializable {
+@Entity(name = "Atividade")
+@Table(name = "atividades")
+public class Atividade implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -30,11 +30,11 @@ public class Trabalho implements Serializable {
 	@JsonBackReference
 	private Creche creche;
 	
-	public Trabalho() {
+	public Atividade() {
 		
 	}
 	
-	public Trabalho(String tipo, String horario, String informacoes) {
+	public Atividade(String tipo, String horario, String informacoes) {
 		super();
 		this.tipo = tipo;
 		this.horario = horario;
@@ -84,7 +84,7 @@ public class Trabalho implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Trabalho other = (Trabalho) obj;
+		Atividade other = (Atividade) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
