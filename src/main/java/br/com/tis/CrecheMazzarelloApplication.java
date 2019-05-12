@@ -11,7 +11,6 @@ import br.com.tis.domain.Creche;
 import br.com.tis.domain.Endereco;
 import br.com.tis.domain.Atividade;
 import br.com.tis.repositories.CrecheRepository;
-import br.com.tis.repositories.EnderecoRepository;
 
 @SpringBootApplication
 public class CrecheMazzarelloApplication implements CommandLineRunner {
@@ -26,7 +25,7 @@ public class CrecheMazzarelloApplication implements CommandLineRunner {
 	}
 
 	public void run(String... args) throws Exception {
-		endereco = new Endereco("Santa Cruz", "Rua Ana Paula", 117, 0, 31150660);
+		/*endereco = new Endereco("Santa Cruz", "Rua Ana Paula", 117, 0, 31150660);
 		Creche creche = new Creche("Creche Madre Mazzarello", "31 99999 9999", endereco);
 		creche.addAtividade(new Atividade("Creche", "Segunda a Sexta", "Atividade com crianças..."));
 		creche.addAtividade(new Atividade("Idosos", "Domingo", "Atividade com idosos..."));
@@ -35,10 +34,6 @@ public class CrecheMazzarelloApplication implements CommandLineRunner {
 		creche.setEndereco(endereco);
 		endereco.setCreche(creche);
 		
-		crecheRepository.saveAll(Arrays.asList(creche));
-		
-		
-		
-	}
-
+		crecheRepository.saveAll(Arrays.asList(creche));*/
+		}
 }
