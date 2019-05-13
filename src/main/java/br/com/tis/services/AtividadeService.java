@@ -6,13 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.com.tis.domain.Atividade;
-import br.com.tis.repositories.TrabalhoRepository;
+import br.com.tis.repositories.AtividadeRepository;
 
 @Service
-public class TrabalhoService {
+public class AtividadeService {
 
 	@Autowired
-	private TrabalhoRepository repo;
+	private AtividadeRepository repo;
 	
 	public Atividade buscar(Integer id) {
 		Optional<Atividade> trabalho = repo.findById(id);

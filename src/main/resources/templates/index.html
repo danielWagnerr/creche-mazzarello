@@ -43,6 +43,12 @@
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#contact">Contatos</a>
           </li>
+          <div sec:authorize="isAuthenticated()">
+            <a class="nav-link js-scroll-trigger" th:href="@{/logout}">Sair</a>
+          </div>
+          <div sec:authorize="isAnonymous()">
+            <a class="nav-link js-scroll-trigger" th:href="@{/login}">Entrar</a>
+          </div>
         </ul>
       </div>
     </div>
@@ -54,10 +60,11 @@
       <div class="mx-auto text-center">
         <h1 class="mx-auto mt-2 mb-5">Creche Madre Mazzarello</h1>
         <h2 class="text-black-100 mx-auto mt-2 mb-5">Educando crianças no presente para formar homens no futuro!</h2>
-        <a th:href="@{/criancas}" class="btn btn-primary js-scroll-trigger">Atividades com Crianças</a>
+        <a th:href="@{/creche}" class="btn btn-primary js-scroll-trigger">Atividades com Crianças</a>
         <a th:href="@{/idosos}" class="btn btn-primary js-scroll-trigger">Atividades com Idosos</a>
-        <a href="catequese.html" class="btn btn-primary js-scroll-trigger">Catequese</a>
+        <a th:href="@{/catequese}" class="btn btn-primary js-scroll-trigger">Catequese</a>
         <a href="#about" class="btn btn-primary js-scroll-trigger">Oportunidades</a>
+        <a th:href="@{/noticias}" class="btn btn-primary js-scroll-trigger">Noticias</a>
       </div>
     </div>
   </header>

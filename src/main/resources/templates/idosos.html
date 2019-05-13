@@ -35,15 +35,15 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav mx-auto">
         <li class="nav-item px-lg-4">
-          <a class="nav-link text-uppercase text-expanded" href="index.html">Início</a>
+          <a class="nav-link text-uppercase text-expanded" th:href="@{/}">Início</a>
         </li>
         <li class="nav-item active px-lg-4">
-          <a class="nav-link text-uppercase text-expanded" href="idosos.html">Informações
+          <a class="nav-link text-uppercase text-expanded" th:href="@{/idosos}">Informações
             <span class="sr-only">(current)</span>
           </a>
         </li>
         <li class="nav-item px-lg-4">
-          <a class="nav-link text-uppercase text-expanded" href="atividades-idosos.html">Atividades</a>
+          <a class="nav-link text-uppercase text-expanded" th:href="@{/idosos/atividades}">Atividades</a>
         </li>
       </ul>
     </div>
@@ -99,7 +99,7 @@
           </div>
          <br>
           <div class="botao">
-              <a class="btn btn-primary2 btn-xl" href="atividades-idosos.html">Conhecer as atividades!</a>
+              <a class="btn btn-primary2 btn-xl" th:href="@{/idosos/atividades}">Conhecer as atividades!</a>
             </div>
         </div>
       </div>

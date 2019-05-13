@@ -35,15 +35,15 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav mx-auto">
         <li class="nav-item px-lg-4">
-          <a class="nav-link text-uppercase text-expanded" href="index.html">Início</a>
+          <a class="nav-link text-uppercase text-expanded" th:href="@{/}">Início</a>
         </li>
         <li class="nav-item active px-lg-4">
-          <a class="nav-link text-uppercase text-expanded" href="criancas.html">Informações
+          <a class="nav-link text-uppercase text-expanded" th:href="@{/creche}">Informações
             <span class="sr-only">(current)</span>
           </a>
         </li>
         <li class="nav-item px-lg-4">
-          <a class="nav-link text-uppercase text-expanded" href="atividades-criancas.html">Atividades</a>
+          <a class="nav-link text-uppercase text-expanded" th:href="@{/creche/atividades}">Atividades</a>
         </li>
       </ul>
     </div>
@@ -99,7 +99,7 @@
           </div>
          <br>
           <div class="botao">
-              <a class="btn btn-primary2 btn-xl" href="atividades-criancas.html">Conhecer as atividades!</a>
+              <a class="btn btn-primary2 btn-xl" th:href="@{/creche/atividades}">Conhecer as atividades!</a>
             </div>
         </div>
       </div>

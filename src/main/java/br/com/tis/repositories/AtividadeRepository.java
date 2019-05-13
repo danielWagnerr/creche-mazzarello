@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import br.com.tis.domain.Atividade;
 
 @Repository
-public interface TrabalhoRepository extends JpaRepository<Atividade, Integer>{
+public interface AtividadeRepository extends JpaRepository<Atividade, Integer>{
 
 }

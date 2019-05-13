@@ -17,10 +17,10 @@ public class User {
 	public User() {}
 	
     public User(int id,
-			@Email(message = "*Please provide a valid Email") @NotEmpty(message = "*Please provide an email") String email,
-			@Length(min = 5, message = "*Your password must have at least 5 characters") @NotEmpty(message = "*Please provide your password") String password,
-			@NotEmpty(message = "*Please provide your name") String name,
-			@NotEmpty(message = "*Please provide your last name") String lastName, int active, Set<Role> roles) {
+			@Email(message = "Insira um email válido") @NotEmpty(message = "Insira um email") String email,
+			@Length(min = 6, message = "Sua senha deve ter, no mínimo, 6 caracteres") @NotEmpty(message = "Insira uma senha") String password,
+			@NotEmpty(message = "Insira o seu nome") String name,
+			@NotEmpty(message = "Insira o seu sobrenome") String lastName, int active, Set<Role> roles) {
 		super();
 		this.id = id;
 		this.email = email;
@@ -37,21 +37,21 @@ public class User {
     private int id;
     
     @Column(name = "email")
-    @Email(message = "*Please provide a valid Email")
-    @NotEmpty(message = "*Please provide an email")
+    @Email(message = "Insira um email válido")
+    @NotEmpty(message = "Insira um email")
     private String email;
     
     @Column(name = "password")
-    @Length(min = 5, message = "*Your password must have at least 5 characters")
-    @NotEmpty(message = "*Please provide your password")
+    @Length(min = 6, message = "Sua senha deve ter, no mínimo, 6 caracteres")
+    @NotEmpty(message = "Insira uma senha")
     private String password;
     
     @Column(name = "name")
-    @NotEmpty(message = "*Please provide your name")
+    @NotEmpty(message = "Insira o seu nome")
     private String name;
     
     @Column(name = "last_name")
-    @NotEmpty(message = "*Please provide your last name")
+    @NotEmpty(message = "Insira o seu sobrenome")
     private String lastName;
     
     @Column(name = "active")
