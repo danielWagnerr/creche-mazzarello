@@ -1,20 +1,22 @@
 package br.com.tis.controllers;
 
 import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.view.RedirectView;
 
 import br.com.tis.domain.Feed;
 import br.com.tis.services.FeedService;
 
-@Controller
+@RestController
 public class FeedController {
 
 	@Autowired
@@ -44,16 +46,20 @@ public class FeedController {
 		return findAll();
 	}
 
-	@PostMapping("/save")
-	public ModelAndView save(@Valid Feed feed, BindingResult result) {
+	@PostMapping("/newPost")
+	public RedirectView save(@Valid Feed feed, BindingResult result) {
+		RedirectView redirectView = new RedirectView();
+	    redirectView.setUrl("localhost:8080/noticias");
 
 		if (result.hasErrors()) {
-			return add(feed);
+			System.out.println(feed);
+			System.out.println("DEU MERDA AQUUI");
+			return redirectView;
 		}
+			
 
 		service.save(feed);
-
-		return findAll();
+	    return redirectView;
 	}
 
 }

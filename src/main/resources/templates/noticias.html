@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 
 <head>
 
@@ -58,7 +58,7 @@
   <div class="mx-auto text-center" sec:authorize="isAuthenticated()">
     <h1 class="site-heading text-center text-white">
       <button onclick="show()" id="newPost" class="btn btn-primary js-scroll-trigger">Adicionar nova
-        noticia</button> 
+        noticia</button>
     </h1>
     <!-- AE CASSIA O POST DAS POSTAGENS EH AQUI, EMBAIXO DISSO CE COLOCA AS POSTAGENS -->
     <div id="show">
@@ -73,18 +73,44 @@
                     <span class="section-heading-upper"></span>
                     <span class="section-heading-lower">Nova Noticia</span>
                   </h2>
-                  <form th:action="@{/FEED SEI LA O SEU LINK AI/nova}" method="POST" class="form-signin">
-                    <label for="title">Titulo</label>
-                    <input type="text" class="form-control" id="title" placeholder="Titulo"> <br>
-                    <!--Material textarea-->
-                    <div class="md-form">
-                      <label for="form7">Texto</label>
-                      <textarea id="form7" class="md-textarea form-control" rows="3"></textarea><br>
-                    </div>
-                    <button class="btn btn-warning btn-lg btn-primary btn-block text-uppercase" name="Submit"
-                      type="Submit" th:text="Enviar">Enviar</button>
-                  </form>
+                  <form class="form-horizontal" th:object="${feed}" th:action="@{/newPost}" method="POST"
+                    style="margin: 10px">
+                    <div class="form-group">
+                      <div class="form-group row">
+                        <div class="col-md-1">
+                          <input type="text" class="form-control input-sm" id="id" th:value="${id}"
+                            readOnly="readonly" />
+                        </div>
+                      </div>
+                      <div class="form-group row">
 
+                        <label>Autor</label>
+                        <input type="text" class="form-control input-sm" th:value="${autor}" autofocus="autofocus"
+                          placeholder="Informe o autor" maxlength="50" />
+
+                      </div>
+                      <div class="form-group row">
+
+                        <label>T&iacute;tulo</label>
+                        <input type="text" class="form-control input-sm" th:value="${titulo}" maxlength="150"
+                          placeholder="Informe o título" />
+
+                      </div>
+                      <div class="form-group row">
+
+                        <label>Data</label>
+                        <input type="date" class="form-control input-sm" th:value="${data}" />
+
+                      </div>
+                      <div class="form-group row">
+                        <textarea id="story" name="story" rows="5" th:value="${texto}" cols="33"></textarea>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <button type="submit" class="btn btn-sm btn-primary">Salvar</button>
+                      <a th:href="@{/}" class="btn btn-sm btn-default">Cancelar</a>
+                    </div>
+                  </form>
                 </div>
               </div>
             </div>
