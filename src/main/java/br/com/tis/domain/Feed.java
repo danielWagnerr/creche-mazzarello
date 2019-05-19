@@ -1,44 +1,59 @@
 package br.com.tis.domain;
 
-import java.io.Serializable;
-import java.util.Date;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-import javax.validation.constraints.NotNull;
-import org.hibernate.validator.constraints.NotBlank;
-import org.springframework.format.annotation.DateTimeFormat;
+import lombok.Builder;
+import lombok.Data;
+import org.hibernate.validator.constraints.Length;
 
-@Entity(name = "feed_post")
-public class Feed implements Serializable {
+import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
 
-	private static final long serialVersionUID = 1L;
+import java.util.HashSet;
+import java.util.Set;
+
+@Data
+@Entity
+@Table(name = "feed")
+@Builder
+public class Feed {
+	public Feed() {}
+	
+    public Feed(int id,
+			@NotEmpty(message = "Insira o título") String titulo,
+			@NotEmpty(message = "Insira o texto") String texto) {
+		super();
+		this.id = id;
+		this.titulo = titulo;
+		this.texto = texto;
+	}
 
 	@Id
-	@SequenceGenerator(name = "feed_seq", sequenceName = "feed_seq")
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "feed_seq")
-	private Long id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "feed_id")
+    private int id;
+    
+    @Column(name = "titulo")
+    @NotEmpty(message = "Insira o título")
+    private String titulo;
+    
+    @Column(name = "texto")
+    @NotEmpty(message = "Insira o texto")
+    private String texto;
+
 	
-	@Column(nullable = false, length = 50)
-	@NotBlank(message = "Autor é uma informação obrigatória.")
-	private String autor;
-	
-	@Column(nullable = false, length = 150)
-	@NotBlank(message = "Título é uma informação obrigatória.")
-	private String titulo;
-	
-	@Column(nullable = false, length = 2000)
-	@NotBlank(message = "Texto é uma informação obrigatória.")
-	private String texto;
-	
-	@Column(nullable = false)
-	@Temporal(TemporalType.DATE)
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	@NotNull(message = "Data é uma informação obrigatória.")
-	private Date data;
+	public String getTitulo() {
+		return titulo;
+	}
+
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+
+	public String getTexto() {
+		return texto;
+	}
+
+	public void setTexto(String texto) {
+		this.texto = texto;
+	}
 }
