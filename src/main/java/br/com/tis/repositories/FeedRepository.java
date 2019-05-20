@@ -5,5 +5,5 @@ import org.springframework.stereotype.Repository;
 
 import br.com.tis.domain.Feed;
 
-@Repository("feedRepository")
+@Repository
 public interface FeedRepository extends JpaRepository<Feed, Long>{}

@@ -14,6 +14,7 @@ import br.com.tis.repositories.FeedRepository;
 @Service("feedService")
 public class FeedService {
 	
+	@Autowired
 	private FeedRepository repository;
 	
 //	public List<Feed> findAll() {
