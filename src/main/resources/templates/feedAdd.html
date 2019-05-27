@@ -33,13 +33,13 @@
 								style="margin: 10px">
 								<div class="form-label-group">
 										<label th:if="${#fields.hasErrors('titulo')}" th:errors="*{titulo}" class="validation-message"></label>
-										<input type="text" id="titulo" th:field="*{titulo}" name="titulo" class="form-control" th:placeholder="Titulo" required autofocus>
 										<label for="titulo">Titulo</label>
+										<input type="text" id="titulo" th:field="*{titulo}" name="titulo" class="form-control" th:placeholder="Titulo" required autofocus>
 									</div>
 									<div class="form-label-group">
 											<label th:if="${#fields.hasErrors('texto')}" th:errors="*{texto}" class="validation-message"></label>
-											<input type="text" id="texto" th:field="*{texto}" name="texto" class="form-control" th:placeholder="Texto" required autofocus>
 											<label for="texto">Texto</label>
+											<textarea id="texto" th:field="*{texto}" name="texto" class="form-control" th:placeholder="Texto" required autofocus></textarea>
 										</div>
 										<div class="form-group row">
 												<button type="submit" class="btn btn-sm btn-primary">Salvar</button>

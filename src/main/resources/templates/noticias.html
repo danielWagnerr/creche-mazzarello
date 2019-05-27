@@ -51,6 +51,42 @@
         <a class="btn btn-primary js-scroll-trigger" th:href="@{/add}" >Adicionar nova noticia</a>
       </h1>
       <!-- AE CASSIA O POST DAS POSTAGENS EH AQUI, EMBAIXO DISSO CE COLOCA AS POSTAGENS -->
+      
+      <div>
+        <br>
+        <section id="section" class="page-section about-heading">
+          <div class="container">
+            <div class="about-heading-content">
+              <div class="row">
+                <div class="col-xl-9 col-lg-10 mx-auto">
+                  <div class="bg-faded rounded p-5">
+                    <div class="panel panel-default">
+                      <div class="panel-body">
+                        <div class="table-responsive">
+                          <table class="table table-sm table-striped table-hover table-bordered">
+                            <thead>
+                              <tr>
+                                <th>T&iacute;tulo</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr th:each="feed : ${feeds}">
+                                <td th:text="${feed.titulo}"></td>
+                                <td th:text="${feed.texto}"></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> <br>
+        </section>
+      </div>
+  </div>
 </body>
 <style>
   body {

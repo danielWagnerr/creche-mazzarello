@@ -17,9 +17,9 @@ public class FeedService {
 	@Autowired
 	private FeedRepository repository;
 	
-//	public List<Feed> findAll() {
-//		return repository.findAll();
-//	}
+	public List<Feed> findAll() {
+		return repository.findAll();
+	}
 	
 	public void save(Feed feed) {
 		repository.save(feed);

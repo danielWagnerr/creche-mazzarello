@@ -3,6 +3,7 @@ package br.com.tis.controllers;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,17 +17,19 @@ import br.com.tis.domain.Feed;
 import br.com.tis.services.FeedService;
 
 @Controller
-public class FeedController {
-
+public class FeedController{
+	
 	@Autowired
 	private FeedService service;
-
-	//	@RequestMapping(method = RequestMethod.GET)
-	//	public ModelAndView findAll() {
-	//		ModelAndView modelAndView = new ModelAndView();
-	//		modelAndView.setViewName("feed");
-	//		return modelAndView;
-	//}
+	
+	@GetMapping("noticias")
+	public ModelAndView findAll() {
+		
+		ModelAndView mv = new ModelAndView("noticias");
+		mv.addObject("feeds", service.findAll());
+		
+		return mv;
+}
 
 	@GetMapping("/add")
 	public ModelAndView add(Feed feed) {
@@ -52,7 +55,6 @@ public class FeedController {
 		mv.addObject("feed", feed);
 
 		if (result.hasErrors()) {
-			System.out.println("deu merda");
 			return mv;
 		}
 		service.save(feed);
