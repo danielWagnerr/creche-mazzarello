@@ -1,13 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
   <title>Creche Madre Mazzarello</title>
 
   <!-- Bootstrap core CSS -->
@@ -23,133 +16,82 @@
 
   <!-- Custom styles for this template -->
   <link href="/css/business-casual.min.css" rel="stylesheet">
-
 </head>
-
 <body>
-
+  
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
-    <div class="container">
-      <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" type="button"
-        data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
-        aria-label="Toggle navigation">Mais</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav mx-auto">
-          <li class="nav-item px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" th:href="@{/}">Início</a>
-          </li>
-        </ul>
+      <div class="container">
+        <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" type="button"
+          data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+          aria-label="Toggle navigation">Mais</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+          aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" th:href="@{/}">Início</a>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
-
-  <br>
-
-  <h1 class="site-heading text-center text-white">
-    <span class="site-heading-upper text-primary mb-3">Creche Madre Mazzarello</span>
-    <span class="site-heading-lower">Noticias</span>
-  </h1>
-
-  <div class="mx-auto text-center" sec:authorize="isAuthenticated()">
+    </nav>
+  
+    <br>
+  
     <h1 class="site-heading text-center text-white">
-      <button onclick="show()" id="newPost" class="btn btn-primary js-scroll-trigger">Adicionar nova
-        noticia</button>
+      <span class="site-heading-upper text-primary mb-3">Creche Madre Mazzarello</span>
+      <span class="site-heading-lower">Noticias</span>
     </h1>
-    <!-- AE CASSIA O POST DAS POSTAGENS EH AQUI, EMBAIXO DISSO CE COLOCA AS POSTAGENS -->
-    <div id="show">
-      <br>
-      <section id="section" class="page-section about-heading">
-        <div class="container">
-          <div class="about-heading-content">
-            <div class="row">
-              <div class="col-xl-9 col-lg-10 mx-auto">
-                <div class="bg-faded rounded p-5">
-                  <h2 class="section-heading mb-4">
-                    <span class="section-heading-upper"></span>
-                    <span class="section-heading-lower">Nova Noticia</span>
-                  </h2>
-                  <form class="form-horizontal" th:object="${feed}" th:action="@{/newPost}" method="POST"
-                    style="margin: 10px">
-                    <div class="form-group">
-                      <div class="form-group row">
-                        <div class="col-md-1">
-                          <input type="text" class="form-control input-sm" id="id" th:value="${id}"
-                            readOnly="readonly" />
+  
+    <div class="mx-auto text-center" sec:authorize="isAuthenticated()">
+      <h1 class="site-heading text-center text-white">
+        <a class="btn btn-primary js-scroll-trigger" th:href="@{/add}" >Adicionar nova noticia</a>
+      </h1>
+      <!-- AE CASSIA O POST DAS POSTAGENS EH AQUI, EMBAIXO DISSO CE COLOCA AS POSTAGENS -->
+      
+      <div>
+        <br>
+        <section id="section" class="page-section about-heading">
+          <div class="container">
+            <div class="about-heading-content">
+              <div class="row">
+                <div class="col-xl-9 col-lg-10 mx-auto">
+                  <div class="bg-faded rounded p-5">
+                    <div class="panel panel-default">
+                      <div class="panel-body">
+                        <div class="table-responsive">
+                          <table class="table table-sm table-striped table-hover table-bordered">
+                            <thead>
+                              <tr>
+                                <th>T&iacute;tulo</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr th:each="feed : ${feeds}">
+                                <td th:text="${feed.titulo}"></td>
+                                <td th:text="${feed.texto}"></td>
+                              </tr>
+                            </tbody>
+                          </table>
                         </div>
                       </div>
-                      <div class="form-group row">
-
-                        <label>Autor</label>
-                        <input type="text" class="form-control input-sm" th:value="${autor}" autofocus="autofocus"
-                          placeholder="Informe o autor" maxlength="50" />
-
-                      </div>
-                      <div class="form-group row">
-
-                        <label>T&iacute;tulo</label>
-                        <input type="text" class="form-control input-sm" th:value="${titulo}" maxlength="150"
-                          placeholder="Informe o título" />
-
-                      </div>
-                      <div class="form-group row">
-
-                        <label>Data</label>
-                        <input type="date" class="form-control input-sm" th:value="${data}" />
-
-                      </div>
-                      <div class="form-group row">
-                        <textarea id="story" name="story" rows="5" th:value="${texto}" cols="33"></textarea>
-                      </div>
                     </div>
-                    <div class="form-group row">
-                      <button type="submit" class="btn btn-sm btn-primary">Salvar</button>
-                      <a th:href="@{/}" class="btn btn-sm btn-default">Cancelar</a>
-                    </div>
-                  </form>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div> <br>
-      </section>
-    </div>
+          </div> <br>
+        </section>
+      </div>
   </div>
-
-  <footer class="footer text-faded text-center py-5">
-    <div class="container">
-      <p class="m-0 small">Copyright &copy; Creche Madre Mazarrello</p>
-    </div>
-  </footer>
-
-  <!-- Bootstrap core JavaScript -->
-  <script src="/vendor/jquery/jquery.min.js"></script>
-  <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
 </body>
-
-<script>
-  document.getElementById("show").style.display = "none"
-
-  function show() {
-    var x = document.getElementById("show");
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } else {
-      x.style.display = "none";
-    }
-  }
-</script>
-
 <style>
   body {
     font-family: Arial;
   }
-
   /* Style the tab */
   .tab {
     overflow: hidden;
@@ -157,7 +99,6 @@
     background-color: rgba(230, 167, 86, .9);
     text-align: center;
   }
-
   /* Style the buttons inside the tab */
   .tab button {
     background-color: rgba(230, 167, 86, .9);
@@ -170,26 +111,20 @@
     font-size: 17px;
     text-align: center;
   }
-
   #butao {
     text-align: center;
   }
-
   .tablinks {
     text-align: center;
   }
-
-
   /* Change background color of buttons on hover */
   .tab button:hover {
     background-color: rgb(255, 255, 255);
   }
-
   /* Create an active/current tablink class */
   .tab button.active {
     background-color: rgba(228, 204, 172, 0.9);
   }
-
   /* Style the tab content */
   .tabcontent {
     display: none;
@@ -199,6 +134,5 @@
     background-color: antiquewhite;
   }
 </style>
-
 
 </html>

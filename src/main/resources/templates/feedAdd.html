@@ -1,66 +1,111 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
+
 <head>
-	<meta charset="UTF-8" />
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<meta name="viewport" content="width=device-width" />
-	<title>Cadastro de Feeds</title>
-	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"></link>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<title>Creche Madre Mazzarello</title>
+
+	<!-- Bootstrap core CSS -->
+	<link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link th:href="@{/css/newPost.css}" rel="stylesheet">
+
+	<!-- Custom fonts for this template -->
+	<link
+		href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+		rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+	<link rel="shortcut icon" href="/img/icone.png" type="image/x-icon" />
+
+	<!-- Custom styles for this template -->
+	<link href="/css/business-casual.min.css" rel="stylesheet">
 </head>
+
 <body>
-	<div class="panel panel-default">
-		<div class="panel-heading">
-			<strong>Cadastro de Feeds</strong>
-		</div>
-		<div class="panel-body">
-			<form class="form-horizontal" th:object="${feed}" th:action="@{/save}" method="POST" style="margin: 10px">
-				<div class="form-group">
- 					<fieldset>
-						<div class="form-group row">
-							<div class="alert alert-danger" th:if="${#fields.hasAnyErrors()}">
-								<div th:each="detailedError : ${#fields.detailedErrors()}">
-									<span th:text="${detailedError.message}"></span>
-								</div>
-							</div>
-						</div> 					
-						<div class="form-group row">
-						    <div class="col-md-1">
-						        <input type="text" class="form-control input-sm" id="id" th:field="*{id}" readOnly="readonly"/>
-						    </div>
-						 </div>
-						<div class="form-group row">                                                          
-							<div class="col-md-4" th:classappend="${#fields.hasErrors('autor')}? 'has-error'">
-							    <label>Autor</label>
-							    <input type="text" class="form-control input-sm" th:field="*{autor}" autofocus="autofocus" placeholder="Informe o autor" maxlength="50"/>
-							</div>
+	<section id="section" class="page-section about-heading">
+		<div class="container">
+			<div class="about-heading-content">
+				<div class="row">
+					<div class="col-xl-9 col-lg-10 mx-auto">
+						<div class="bg-faded rounded p-5">
+							<h2 class="section-heading mb-4">
+								<span class="section-heading-upper"></span>
+								<span class="section-heading-lower">Nova Noticia</span></h2>
+							<form class="form-horizontal" th:action="@{/add}" th:object="${feed}" method="POST"
+								style="margin: 10px">
+								<div class="form-label-group">
+										<label th:if="${#fields.hasErrors('titulo')}" th:errors="*{titulo}" class="validation-message"></label>
+										<label for="titulo">Titulo</label>
+										<input type="text" id="titulo" th:field="*{titulo}" name="titulo" class="form-control" th:placeholder="Titulo" required autofocus>
+									</div>
+									<div class="form-label-group">
+											<label th:if="${#fields.hasErrors('texto')}" th:errors="*{texto}" class="validation-message"></label>
+											<label for="texto">Texto</label>
+											<textarea id="texto" th:field="*{texto}" name="texto" class="form-control" th:placeholder="Texto" required autofocus></textarea>
+										</div>
+										<div class="form-group row">
+												<button type="submit" class="btn btn-sm btn-primary">Salvar</button>
+												<a th:href="@{/noticias}" class="btn btn-sm btn-default">Cancelar</a>
+						  </div>
+							</form>
 						</div>
-						<div class="form-group row">
-							<div class="col-md-4" th:classappend="${#fields.hasErrors('titulo')}? 'has-error'">
-								<label>T&iacute;tulo</label> 
-								<input type="text" class="form-control input-sm" th:field="*{titulo}" maxlength="150" placeholder="Informe o título"/>
-							</div>
-						</div>
-						<div class="form-group row">
-							<div class="col-md-2" th:classappend="${#fields.hasErrors('data')}? 'has-error'">
-								<label>Data</label> 
-								<input type="date" class="form-control input-sm" th:field="*{data}"/>
-							</div>
-						</div>						
-						<div class="form-group row">
-							<div class="col-md-4" th:classappend="${#fields.hasErrors('texto')}? 'has-error'">
-								<label>Texto</label>
-								<textarea class="form-control input-sm" th:field="*{texto}" cols="5" rows="5" placeholder="Informe o texto"></textarea>
-							</div>
-						</div>						
-					</fieldset>
+					</div>
 				</div>
-				<div class="form-group row">
-					<button type="submit" class="btn btn-sm btn-primary">Salvar</button>
-					<a th:href="@{/}" class="btn btn-sm btn-default">Cancelar</a>
-				</div>
-			</form>
+			</div>
 		</div>
-	</div>
+	</section>
+
 </body>
+<style>
+	body {
+		font-family: Arial;
+	}
+
+	/* Style the tab */
+	.tab {
+		overflow: hidden;
+		border: 1px solid #ccc;
+		background-color: rgba(230, 167, 86, .9);
+		text-align: center;
+	}
+
+	/* Style the buttons inside the tab */
+	.tab button {
+		background-color: rgba(230, 167, 86, .9);
+		float: left;
+		border: none;
+		outline: none;
+		cursor: pointer;
+		padding: 12px 25px;
+		transition: 0.3s;
+		font-size: 17px;
+		text-align: center;
+	}
+
+	#butao {
+		text-align: center;
+	}
+
+	.tablinks {
+		text-align: center;
+	}
+
+	/* Change background color of buttons on hover */
+	.tab button:hover {
+		background-color: rgb(255, 255, 255);
+	}
+
+	/* Create an active/current tablink class */
+	.tab button.active {
+		background-color: rgba(228, 204, 172, 0.9);
+	}
+
+	/* Style the tab content */
+	.tabcontent {
+		display: none;
+		padding: 6px 12px;
+		border: 1px solid #ccc;
+		border-top: none;
+		background-color: antiquewhite;
+	}
+</style>
+
 </html>
