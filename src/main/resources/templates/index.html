@@ -44,6 +44,9 @@
             <a class="nav-link js-scroll-trigger" href="#contact">Contatos</a>
           </li>
           <div sec:authorize="isAuthenticated()">
+              <a class="nav-link js-scroll-trigger" th:href="@{/registrar}">Registrar</a>
+          </div>
+          <div sec:authorize="isAuthenticated()">
             <a class="nav-link js-scroll-trigger" th:href="@{/logout}">Sair</a>
           </div>
           <div sec:authorize="isAnonymous()">

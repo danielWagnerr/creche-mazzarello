@@ -51,7 +51,7 @@ $('form').on('submit', (ev) => {
                 toast: true,
                 position: 'center',
                 showConfirmButton: false,
-                timer: 3000
+                timer: 4000
             })
 
             Toast.fire({
