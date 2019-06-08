@@ -20,7 +20,7 @@
 
   <!-- Custom styles for this template -->
   <link th:href="@{/css/grayscale.min.css}" rel="stylesheet">
-
+  <link rel="stylesheet" th:href="@{/css/sweetalert2.min.css}">
 </head>
 
 <body id="page-top">
@@ -82,7 +82,7 @@
 
         </div>
       </div>
-      <img src="/img/creche2.jpeg" width="100%" height="100%"    alt=""> <!-- class="img-fluid" -->
+      <img src="/img/creche2.jpeg" width="100%" height="100%" alt=""> <!-- class="img-fluid" -->
     </div>
     <br>
   </section>
@@ -94,7 +94,7 @@
       <!-- Featured Project Row -->
       <div class="row align-items-center no-gutters mb-4 mb-lg-5">
         <div class="col-xl-8 col-lg-7">
-          <img class="img-fluid mb-3 mb-lg-0" src="/img/creche12.jpeg" width="100%" height="100%"  alt="">
+          <img class="img-fluid mb-3 mb-lg-0" src="/img/creche12.jpeg" width="100%" height="100%" alt="">
         </div>
         <div class="col-xl-4 col-lg-5">
           <div class="featured-text text-center text-lg-left">
@@ -134,9 +134,9 @@
       </div>
       <img src="/img/creche17.jpeg" width="100%" height="100%" class="img-fluid" alt="">
     </div>
-    <br> 
+    <br>
   </section>
-  
+
   <section id="projects" class="projects-section bg-light">
     <div class="container">
 
@@ -183,16 +183,16 @@
     <input type="radio" name="carousel" id="carousel3" />
     <input type="radio" name="carousel" id="carousel4" />
 
-   
+
     <main class="carousel__stage">
       <aside class="carousel__item">
-        <img class="carousel__image" src="/img/estrutura.jpg" width="70%" height="60%"  alt="" />
+        <img class="carousel__image" src="/img/estrutura.jpg" width="70%" height="60%" alt="" />
         <label for="carousel2" class="carousel__next"></label>
       </aside>
 
       <aside class="carousel__item">
         <label for="carousel1" class="carousel__prev"></label>
-        <img class="carousel__image" src="/img/creche18.jpeg"  width="50%" height="50%" alt="" />
+        <img class="carousel__image" src="/img/creche18.jpeg" width="50%" height="50%" alt="" />
         <label for="carousel3" class="carousel__next"></label>
       </aside>
 
@@ -218,10 +218,25 @@
           <br><br>
           <i class="far fa-paper-plane fa-2x mb-2 text-black"></i>
           <h2 class="text-black mb-5">Nos mande uma mensagem!</h2>
-          <form class="form-inline d-flex">
-            <textarea rows="4" cols="20 " class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0"
-              placeholder="O que você deseja nos dizer?"></textarea>
-            <button type="submit" class="btn btn-primary mx-auto">Enviar</button>
+          <form>
+            <div class="form-group">
+              <label for="nome">Nome</label>
+              <input class="form-control" id="nome" type="text" placeholder="Nome" required>
+            </div>
+            <div class="form-group">
+              <label for="assunto">Assunto</label>
+              <input class="form-control" id="assunto" type="text" placeholder="Assunto" required>
+            </div>
+            <div class="form-group">
+              <label for="contato">Contato</label>
+              <input class="form-control" id="contato" type="text" placeholder="Email e/ou Telefone" required>
+            </div>
+            <div class="form-group">
+              <label for="mensagem">Mensagem</label>
+              <textarea rows="4" cols="20 " id="mensagem" class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0"
+                placeholder="O que você deseja nos dizer?" required></textarea>
+            </div>
+            <button type="submit" id="enviarEmail" class="btn btn-primary mx-auto">Enviar</button>
           </form>
           <br><br>
         </div>
@@ -272,7 +287,8 @@
         </div>
       </div>
 
-      <div target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/cheche.madremazzarello.3"  class="social d-flex justify-content-center">
+      <div target="_blank" rel="noopener noreferrer" href="https://www.facebook.com"
+        class="social d-flex justify-content-center">
 
         <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/cheche.madremazzarello.3" class="mx-2">
           <i class="fab fa-facebook-f"></i>
@@ -289,6 +305,27 @@
     </div>
   </footer>
 
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Título do modal</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+          <button type="button" class="btn btn-primary">Salvar mudanças</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Bootstrap core JavaScript -->
   <script src="/vendor/jquery/jquery.min.js"></script>
@@ -299,7 +336,9 @@
 
   <!-- Custom scripts for this template -->
   <script src="/js/grayscale.min.js"></script>
-
+  <script src="/js/sendEmail.js"></script>
+  <script src="/js/sweetalert2.min.js"></script>
 
 </body>
+
 </html>
