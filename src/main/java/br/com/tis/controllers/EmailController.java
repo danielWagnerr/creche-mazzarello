@@ -21,7 +21,7 @@ public class EmailController {
 	private JavaMailSender mailSender;
 	
 	@PostMapping("/enviarEmail")
-	public ResponseEntity enviarEmail(@RequestBody String dados) throws UnsupportedEncodingException {
+	public ResponseEntity<HttpStatus> enviarEmail(@RequestBody String dados) throws UnsupportedEncodingException {
 		String nome = URLDecoder.decode(dados, "UTF-8").split("&")[0].split("=")[1];
 		String assunto = URLDecoder.decode(dados, "UTF-8").split("&")[1].split("=")[1];
 		String mensagem = URLDecoder.decode(dados, "UTF-8").split("&")[2].split("=")[1];
