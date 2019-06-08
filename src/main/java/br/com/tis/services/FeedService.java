@@ -1,6 +1,8 @@
 package br.com.tis.services;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 
@@ -18,14 +20,17 @@ public class FeedService {
 	private FeedRepository repository;
 	
 	public List<Feed> findAll() {
-		return repository.findAll();
+		List<Feed> feed = new ArrayList<Feed>();
+		feed = repository.findAll();
+		Collections.reverse(feed);
+		return feed;
 	}
 	
 	public void save(Feed feed) {
 		repository.save(feed);
     }
 	
-//	public void delete(Long id) {
-//		repository.deleteById(id);
-//	}
+	public void delete(Long id) {
+		repository.deleteById(id);
+	}
 }

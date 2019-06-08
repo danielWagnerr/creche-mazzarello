@@ -30,7 +30,7 @@ public class Feed {
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "feed_id")
-    private int id;
+    private long id;
     
     @Column(name = "titulo")
     @NotEmpty(message = "Insira o título")
@@ -55,5 +55,8 @@ public class Feed {
 
 	public void setTexto(String texto) {
 		this.texto = texto;
+	}
+	public Long getId() {
+		return id;
 	}
 }
