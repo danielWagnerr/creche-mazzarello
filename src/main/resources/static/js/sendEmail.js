@@ -1,4 +1,4 @@
-$('form').on('submit', (ev) => {
+$('#enviarMensagem').on('submit', (ev) => {
     ev.preventDefault()
 
     Swal.fire({

@@ -44,7 +44,7 @@
             <a class="nav-link js-scroll-trigger" href="#contact">Contatos</a>
           </li>
           <div sec:authorize="isAuthenticated()">
-              <a class="nav-link js-scroll-trigger" th:href="@{/registrar}">Registrar</a>
+            <a class="nav-link js-scroll-trigger" th:href="@{/registrar}">Registrar</a>
           </div>
           <div sec:authorize="isAuthenticated()">
             <a class="nav-link js-scroll-trigger" th:href="@{/logout}">Sair</a>
@@ -221,7 +221,7 @@
           <br><br>
           <i class="far fa-paper-plane fa-2x mb-2 text-black"></i>
           <h2 class="text-black mb-5">Nos mande uma mensagem!</h2>
-          <form>
+          <form id="enviarMensagem">
             <div class="form-group">
               <label for="nome">Nome</label>
               <input class="form-control" id="nome" type="text" placeholder="Nome" required>
@@ -240,6 +240,22 @@
                 placeholder="O que você deseja nos dizer?" required></textarea>
             </div>
             <button type="submit" id="enviarEmail" class="btn btn-primary mx-auto">Enviar</button>
+          </form>
+          <br><br>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10 col-lg-8 mx-auto text-center">
+          <h3 class="text-black mb-5">Nos faça uma doação!</h3>
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <input type="hidden" name="cmd" value="_s-xclick" />
+            <input type="hidden" name="hosted_button_id" value="QF9X9QHQ7T7SA" />
+            <input type="image" src="https://www.paypalobjects.com/pt_BR/BR/i/btn/btn_donateCC_LG.gif" border="0"
+              name="submit" title="PayPal - The safer, easier way to pay online!"
+              alt="Faça doações com o botão do PayPal" />
+            <img alt="" border="0" src="https://www.paypal.com/pt_BR/i/scr/pixel.gif" width="1" height="1" />
           </form>
           <br><br>
         </div>
@@ -293,7 +309,8 @@
       <div target="_blank" rel="noopener noreferrer" href="https://www.facebook.com"
         class="social d-flex justify-content-center">
 
-        <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/cheche.madremazzarello.3" class="mx-2">
+        <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/cheche.madremazzarello.3"
+          class="mx-2">
           <i class="fab fa-facebook-f"></i>
         </a>
       </div>
