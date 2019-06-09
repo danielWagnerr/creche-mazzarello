@@ -36,7 +36,7 @@ public class Feed {
     @NotEmpty(message = "Insira o título")
     private String titulo;
     
-    @Column(name = "texto")
+    @Column(name = "texto", length=1073741824)
     @NotEmpty(message = "Insira o texto")
     private String texto;
 
