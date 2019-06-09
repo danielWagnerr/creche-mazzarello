@@ -25,15 +25,6 @@ public class CrecheMazzarelloApplication implements CommandLineRunner {
 	}
 
 	public void run(String... args) throws Exception {
-		/*endereco = new Endereco("Santa Cruz", "Rua Ana Paula", 117, 0, 31150660);
-		Creche creche = new Creche("Creche Madre Mazzarello", "31 99999 9999", endereco);
-		creche.addAtividade(new Atividade("Creche", "Segunda a Sexta", "Atividade com crianças..."));
-		creche.addAtividade(new Atividade("Idosos", "Domingo", "Atividade com idosos..."));
-		creche.addAtividade(new Atividade("Caridade", "Sabado", "Caridades..."));
 		
-		creche.setEndereco(endereco);
-		endereco.setCreche(creche);
-		
-		crecheRepository.saveAll(Arrays.asList(creche));*/
-		}
+	}
 }

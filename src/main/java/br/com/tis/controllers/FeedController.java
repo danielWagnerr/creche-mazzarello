@@ -50,14 +50,14 @@ public class FeedController{
 	}
 
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
-	public ModelAndView save(@Valid Feed feed, BindingResult result) {
+	public String save(@Valid Feed feed, BindingResult result) {
 		ModelAndView mv = new ModelAndView("/feedAdd");
 		mv.addObject("feed", feed);
 
 		if (result.hasErrors()) {
-			return mv;
+			return "redirect:noticias";
 		}
 		service.save(feed);
-		return mv;
+		return "redirect:noticias";
 	}
 }
