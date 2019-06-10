@@ -6,6 +6,7 @@
 
 	<!-- Bootstrap core CSS -->
 	<link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<link th:href="@{/css/newPost.css}" rel="stylesheet">
 
 	<!-- Custom fonts for this template -->
@@ -27,11 +28,11 @@
 					<div class="bg-faded rounded p-5">
 						<h2 class="section-heading mb-4">
 							<span class="section-heading-upper"></span>
-							<span class="section-heading-lower">Nova Noticia</span></h2>
+							<span class="section-heading-lower">Nova Notícia</span></h2>
 						<form th:action="@{/add}" th:object="${feed}" method="POST" style="margin: 10px">
 							<div class="form-group">
 								<label th:if="${#fields.hasErrors('titulo')}" th:errors="*{titulo}" class="validation-message"></label>
-								<label for="titulo">Titulo</label>
+								<label for="titulo">Título</label>
 								<input type="text" id="titulo" th:field="*{titulo}" name="titulo" class="form-control" th:placeholder="Titulo" required autofocus>
 							</div>
 							<div class="form-group">
